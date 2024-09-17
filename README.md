@@ -48,69 +48,88 @@ cc main.c libftprint.a
 
 ## How to
 
-### %c or %% 
-> Print charactere
+<details>
+<summary> %c or %% </summary>
+  
+*Print character:*
+
 ```c
 ssize_t write(int fd, const void *buf, size_t count);
 ```
+</details>
 
-### %s
-> While loop of:
+<details>
+<summary> %s </summary>
+  
+*While loop of:*
 ```c
 ssize_t write(int fd, const void *buf, size_t count);
 ```
+</details>
 
-### %p
-> Need to convert address to hex (base 16):
+<details>
+<summary> %p </summary>
+  
+*Need to convert address to hex (base 16):*
 ```c
 hex = address % 16 + '0'
 address /= 16;
 ```
+</details>
 
-### %i
-> Need to convert address to hex (base 10):
+<details>
+<summary> %i </summary>
+  
+*Need to convert address to hex (base 10):*
 ```c
 hex = address % 16 - 10 + 'a'
 address /= 16;
 ```
-### %d or %u
-> Decimal:
+</details>
+
+<details>
+<summary> %d or %u </summary>
+
+  *Decimal:*
 ```c
 int number;
 ```
-> Unsigned decimal:
+*Unsigned decimal:*
 ```c
 unsigned int number;
 ```
-> Transform char into decimal with recursive:
+*Transform char into decimal with recursive:*
 ```c
 if (number < 10)
-  print number : number + '0'
+  print(number + '0')
 else
 {
   function_recursive(number / 10)
   function_recursive(number % 10)
 }
 ```
+</details>
 
-### %x or %X
-> Lowercase format:
+<details>
+<summary> %x or %X </summary>
+  
+*Lowercase format:*
 ```c
 char *symbol;
 
 symbol = "0123456789abcdef"
 ```
-> Uppercase format:
+*Uppercase format:*
 ```c
 
 char *symbol;
 
 symbol = "0123456789ABCDEF"
 ```
-> Print hex with recursive:
+*Print hex with recursive:*
 ```c
 if (number < 16)
-  print : symbol[number]
+  print(symbol[number])
 else
 {
   function_recursive(num / 16);
@@ -118,3 +137,5 @@ else
 }
 
 ```
+
+</details>
